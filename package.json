@@ -1,0 +1,26 @@
+{
+  "name": "car_service_project",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ManithSanvidu/Car_Service_final.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ManithSanvidu/Car_Service_final/issues"
+  },
+  "homepage": "https://github.com/ManithSanvidu/Car_Service_final#readme",
+  "devDependencies": {
+    "tailwindcss": "^4.1.3"
+  },
+  "description": "",
+  "dependencies": {
+    "@fortawesome/fontawesome-free": "^6.7.2"
+  }
+}

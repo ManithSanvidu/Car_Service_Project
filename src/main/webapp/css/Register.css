@@ -1,0 +1,168 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /*justify-content: center;*/
+    height: 100vh;
+    background: #f4f4f4;
+}
+/* Navigation Bar */
+.navbar {
+    width: 100%;
+    background: #2c3e50;
+    color: #fff;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 40px;
+
+}
+
+.brand {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.nav-links a {
+    color: #fff;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 16px;
+    padding: 5px 10px;
+    transition: 0.3s;
+}
+
+.nav-links a:hover, .nav-links .active {
+    background: #e67e22;
+    border-radius: 5px;
+}
+
+/* Container */
+.container {
+    display: flex;
+    width: 70%;
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+    margin-top: 60px;
+    margin-bottom: 60px;
+    justify-content: center;
+    height: 100vh;
+}
+
+/* Left Section */
+.left-section {
+    width: 40%;
+    background: #34495e;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 50px;
+    text-align: center;
+}
+
+/* Right Section */
+.right-section {
+    width: 60%;
+    padding: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-box {
+    width: 100%;
+    max-width: 350px;
+}
+
+/* Form Inputs */
+.input-group {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    font-size: 14px;
+    margin-bottom: 5px;
+    color: #333;
+}
+
+.input-group input {
+    width: 100%;
+    padding: 10px 40px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    font-size: 16px;
+}
+
+.input-group i {
+    position: absolute;
+    left: 10px;
+    top: 35px;
+    color: #777;
+}
+
+/* Options (Remember Me & Forgot Password) */
+.options {
+    display: flex;
+    justify-content: space-between;
+    font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.options a {
+    text-decoration: none;
+    color: #e67e22;
+}
+
+.options a:hover {
+    text-decoration: underline;
+}
+
+/* Buttons */
+button {
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.signup-btn {
+    background: #e67e22;
+    color: white;
+}
+
+.signup-btn:hover {
+    background: #d35400;
+}
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+        width: 90%;
+    }
+
+    .left-section {
+        width: 100%;
+        padding: 30px;
+    }
+
+    .right-section {
+        width: 100%;
+        padding: 30px;
+    }
+}
