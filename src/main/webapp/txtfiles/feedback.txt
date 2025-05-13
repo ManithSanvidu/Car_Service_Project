@@ -1,0 +1,103 @@
+// This file will store user feedback in the format:
+// Name: [User Name]
+// Email: [User Email]
+// Subject: [User Subject]
+// Message: [User Message]
+Name: null
+Email: null
+Subject: null
+Message: null
+Date: Sat May 10 09:15:52 IST 2025
+---------------------------
+Name: null
+Email: null
+Subject: null
+Message: null
+Date: Sat May 10 09:16:30 IST 2025
+---------------------------
+Name: null
+Email: null
+Subject: null
+Message: null
+Date: Sat May 10 09:17:38 IST 2025
+---------------------------
+Name: null
+Email: null
+Subject: null
+Message: null
+Date: Sat May 10 09:26:47 IST 2025
+---------------------------
+Name: Jane
+Email: jane@gmail.com
+Subject: Issue
+Message: Tire replacement 
+Date: Sat May 10 09:27:07 IST 2025
+---------------------------
+Name: John
+Email: john@gmail.com
+Subject: Car washing package
+Message: I want to do a car wash next week
+Date: Sat May 10 09:28:10 IST 2025
+---------------------------
+Name: Mark
+Email: mark@gmail.com
+Subject: Battery Replacement
+Message: I want to replacement my car battery.
+Date: Sat May 10 09:29:13 IST 2025
+---------------------------
+Name: Jane
+Email: jane@gmail.com
+Subject: Tire replacement 
+Message: I want to replace the tires of my Van.
+Date: Sat May 10 09:30:55 IST 2025
+---------------------------
+Name: Jane
+Email: jane@gmail.com
+Subject: Tire replacement 
+Message: I want to replace tires of a jeep
+
+Date: Sat May 10 09:34:26 IST 2025
+---------------------------
+Name: Jane
+Email: jane@gmail.com
+Subject: Car washing package
+Message: Carsh wash for a benz car
+
+Date: Sat May 10 09:50:21 IST 2025
+---------------------------
+Name: Jane
+Email: jane@gmail.com
+Subject: Tire replacement 
+Message: I want to replace tires of my van
+Date: Sat May 10 09:51:26 IST 2025
+---------------------------
+Name: Jane
+Email: jane@gmail.com
+Subject: Battery Replacement
+Message: I want to replace with a new Exide battery.
+Date: Sat May 10 19:51:29 IST 2025
+---------------------------
+Name: Venul
+Email: venul@gmail.com
+Subject: Car washing package
+Message: I want to do a car wash to an Audi Q2.
+Date: Sat May 10 20:01:21 IST 2025
+---------------------------
+Name: Mark
+Email: mark@gmail.com
+Subject: Windscreen issue 
+Message: I want to put a new windscreen for my car.
+Date: Sat May 10 22:00:10 IST 2025
+---------------------------
+Name: Jane
+Email: jane@gmail.com
+Subject: Tire replacement 
+Message: I want to replace my tires
+Date: Sat May 10 22:20:18 IST 2025
+---------------------------
+Name: Jane
+Email: jane@gmail.com
+Subject: Tire replacement 
+Message: 
+Date: Sat May 10 23:13:44 IST 2025
+---------------------------

@@ -1,0 +1,148 @@
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #f4f8fb;
+    margin: 0; /* Updated to ensure no top space */
+    padding: 20px;
+}
+
+.navbar {
+    margin-top: 0; /* Ensure no top margin */
+    margin-bottom: 20px; /* Add space below the navbar */
+}
+
+.navbar-nav .nav-link {
+    color: white !important; /* Ensure text is white */
+    font-size: 15px;
+    padding: 8px 15px !important; /* Added padding */
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: transparent !important; /* Ensures no background by default */
+    margin: 0 10px; /* Added margin for spacing between navbar items */
+    border-radius: 5px; /* Added border-radius */
+    font-family: 'Roboto', sans-serif; /* Updated font family */
+}
+
+.navbar-nav .nav-link:hover,
+.navbar-nav .nav-link:focus {
+    color: white; /* Updated hover text color to gold */
+    background-color: greenyellow !important;
+}
+
+/* Active state for nav-link */
+.navbar-nav .nav-link.active {
+    color: white;
+    background-color: greenyellow !important;
+    font-weight: 600;
+}
+
+.actions {
+    display: flex;
+    gap: 10px; /* Add spacing between buttons */
+}
+
+/* Mobile view */
+@media (max-width: 992px) {
+    .navbar-nav .nav-link {
+        padding: 12px 15px !important;
+    }
+
+    .navbar-nav {
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+    }
+}
+
+.container {
+    max-width: 600px;
+    margin: auto;
+    background: white;
+    padding: 30px;
+    border-radius: 12px;
+    box-shadow: 0 8px 16px rgba(0,0,0,0.1);
+}
+
+h1, h2 {
+    text-align: center;
+    color: #003f88;
+}
+
+.booking-form {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.booking-form input,
+.booking-form select,
+.booking-form button {
+    padding: 10px;
+    border-radius: 6px;
+    border: 1px solid #ccc;
+    font-size: 16px;
+}
+
+.booking-form button {
+    background-color: #003f88;
+    color: white;
+    border: none;
+    cursor: pointer;
+}
+
+.booking-form button:hover {
+    background-color: #0056b3;
+}
+
+#historyList {
+    list-style: none;
+    padding-left: 0;
+}
+
+#historyList li {
+    background: linear-gradient(rgba(0, 0, 0, .7), rgba(0, 0, 0, .7)), url('../img/carousel-bg-1.jpg');
+    background-size: cover;
+    color: white;
+    padding: 15px;
+    border-radius: 10px;
+    margin-bottom: 15px;
+    border-left: 5px solid greenyellow;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#historyList li h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+#historyList li p {
+    margin: 5px 0;
+    font-size: 14px;
+}
+
+/* Navbar */
+.navbar-light .nav-link {
+    color: white !important;
+    font-size: 15px;
+    padding: 8px 15px !important;
+    text-transform: uppercase;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    background-color: transparent !important;
+    margin: 0 10px;
+    border-radius: 5px;
+    font-family: 'Roboto', sans-serif;
+}
+
+.navbar-light .nav-link:hover,
+.navbar-light .nav-link:focus {
+    color: white;
+    background-color: greenyellow !important;
+}
+
+.navbar-light .nav-link.active {
+    color: white;
+    background-color: greenyellow !important;
+    font-weight: 600;
+}
+
