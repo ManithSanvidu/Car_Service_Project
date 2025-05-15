@@ -7,7 +7,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 public class AddBookingServlet extends HttpServlet {
-    private static final String BOOKINGS_FILE_PATH = "c:\\Users\\HP\\IdeaProjects\\Car_Service_Project\\src\\main\\webapp\\txtfiles\\bookings.txt";
+    private static final String BOOKINGS_FILE_PATH = "c:\\Users\\HP\\IdeaProjects\\Car_Service_OOP_Project\\src\\main\\webapp\\txtfiles\\bookings.txt";
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
