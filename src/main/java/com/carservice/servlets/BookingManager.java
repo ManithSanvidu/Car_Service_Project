@@ -1,73 +1,77 @@
 package com.carservice.servlets;
 
+import com.carservice.models.Booking;
+import com.carservice.models.BookingList;
+import com.carservice.models.BookingNode;
+
 import java.io.BufferedWriter;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.text.ParseException;
-import java.text.SimpleDateFormat;
-import java.util.*;
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 public class BookingManager {
 
     public static List<Map<String, String>> loadAndSortBookings(String filePath, String loggedInUserName) {
-        List<Map<String, String>> bookings = new LinkedList<>();
+        BookingList bookingList = new BookingList();
         try {
-            List<String> lines = Files.readAllLines(Paths.get(filePath));
-            for (String line : lines) {
+            for (String line : Files.readAllLines(Paths.get(filePath))) {
                 String[] parts = line.split(",");
                 if (parts.length == 6) {
-                    // Add booking if loggedInUserName is null or matches the booking's name
-                    if (loggedInUserName == null || parts[0].equalsIgnoreCase(loggedInUserName)) {
-                        Map<String, String> booking = new HashMap<>();
-                        booking.put("name", parts[0]);
-                        booking.put("number", parts[1]);
-                        booking.put("vehicle", parts[2]);
-                        booking.put("make", parts[3]);
-                        booking.put("date", parts[4]);
-                        booking.put("service", parts[5]);
-                        bookings.add(booking);
+                    String name = parts[0];
+                    if (loggedInUserName == null || name.equalsIgnoreCase(loggedInUserName)) {
+                        Booking booking = new Booking(
+                                parts[0], // name
+                                parts[1], // number
+                                parts[2], // vehicle
+                                parts[3], // make
+                                parts[4], // date
+                                parts[5]  // service
+                        );
+                        bookingList.add(booking);
                     }
                 }
             }
 
-            // Sort the filtered list by date
-            SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd");
-            bookings.sort((b1, b2) -> {
-                try {
-                    Date date1 = dateFormat.parse(b1.get("date"));
-                    Date date2 = dateFormat.parse(b2.get("date"));
-                    return date1.compareTo(date2);
-                } catch (ParseException e) {
-                    return 0; // Keep original order if parsing fails
-                }
-            });
+            bookingList.selectionSortByDate();
+
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return bookings;
+
+        // Convert BookingList to List<Map<String, String>>
+        List<Map<String, String>> result = new ArrayList<>();
+        BookingNode current = bookingList.getHead();
+        while (current != null) {
+            Booking booking = current.booking;
+            Map<String, String> bookingMap = new HashMap<>();
+            bookingMap.put("name", booking.name);
+            bookingMap.put("number", booking.number);
+            bookingMap.put("vehicle", booking.vehicle);
+            bookingMap.put("make", booking.make);
+            bookingMap.put("date", booking.date);
+            bookingMap.put("service", booking.service);
+            result.add(bookingMap);
+            current = current.next;
+        }
+        return result;
     }
 
-    // Overloaded method to handle calls without a username
     public static List<Map<String, String>> loadAndSortBookings(String filePath) {
-        return loadAndSortBookings(filePath, null); // Pass null for loggedInUserName
+        return loadAndSortBookings(filePath, null);
     }
 
-    public static void saveBookings(String filePath, List<Map<String, String>> bookings) throws IOException {
+    public static void saveBookings(String filePath, BookingList bookingList) throws IOException {
         try (BufferedWriter writer = Files.newBufferedWriter(Paths.get(filePath))) {
-            for (Map<String, String> booking : bookings) {
-                // Maintain the original order: name, number, vehicle, make, date, service
-                writer.write(String.join(",",
-                        booking.getOrDefault("name", ""),
-                        booking.getOrDefault("number", ""),
-                        booking.getOrDefault("vehicle", ""),
-                        booking.getOrDefault("make", ""),
-                        booking.getOrDefault("date", ""),
-                        booking.getOrDefault("service", "")
-                ));
+            BookingNode current = bookingList.getHead();
+            while (current != null) {
+                writer.write(current.booking.toString());
                 writer.newLine();
+                current = current.next;
             }
         }
     }
 }
-
